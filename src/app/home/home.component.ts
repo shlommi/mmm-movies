@@ -21,28 +21,22 @@ export class HomeComponent implements OnInit {
   }
 
   getTrendingMovies() {
-    this.https
-      .get('http://localhost:4200/assets/data/trending-movies.json')
-      .subscribe((movies) => {
-        this.trendingMovies = movies;
-        console.log(this.trendingMovies);
-      });
+    this.https.get('assets/data/trending-movies.json').subscribe((movies) => {
+      this.trendingMovies = movies;
+      console.log(this.trendingMovies);
+    });
   }
 
   getTheatreMovies() {
-    this.https
-      .get('http://localhost:4200/assets/data/theatre-movies.json')
-      .subscribe((movies) => {
-        this.theatreMovies = movies;
-      });
+    this.https.get('assets/data/theatre-movies.json').subscribe((movies) => {
+      this.theatreMovies = movies;
+    });
   }
 
   getPopularMovies() {
-    this.https
-      .get('http://localhost:4200/assets/data/popular-movies.json')
-      .subscribe((movies) => {
-        this.popularMovies = movies;
-      });
+    this.https.get('assets/data/popular-movies.json').subscribe((movies) => {
+      this.popularMovies = movies;
+    });
   }
 
   goToMovie(type: string, id: string) {
